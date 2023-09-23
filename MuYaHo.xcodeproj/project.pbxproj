@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0884217A2ABF93BA006DA592 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 088421792ABF93BA006DA592 /* RiveRuntime */; };
+		0884217D2ABF93C5006DA592 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217C2ABF93C5006DA592 /* SnapKit */; };
+		0884217F2ABF93C5006DA592 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */; };
+		088421832ABFA618006DA592 /* mainVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 088421822ABFA618006DA592 /* mainVideo.mp4 */; };
 		08CA25D52ABF597C006C2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D42ABF597C006C2443 /* AppDelegate.swift */; };
 		08CA25D72ABF597C006C2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D62ABF597C006C2443 /* SceneDelegate.swift */; };
 		08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D82ABF597C006C2443 /* MainViewController.swift */; };
@@ -16,9 +20,6 @@
 		08CA260D2ABF5A26006C2443 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA260C2ABF5A26006C2443 /* Label.swift */; };
 		08CA260F2ABF5A3A006C2443 /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */; };
 		08CA26112ABF5A54006C2443 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26102ABF5A54006C2443 /* LoginViewController.swift */; };
-		08CA26142ABF5A7A006C2443 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26132ABF5A7A006C2443 /* SnapKit */; };
-		08CA26162ABF5A7A006C2443 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */; };
-		08CA26192ABF5A91006C2443 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26182ABF5A91006C2443 /* RiveRuntime */; };
 		08CA261C2ABF5AC2006C2443 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */; };
 		08CA261E2ABF5AD5006C2443 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261D2ABF5AD5006C2443 /* MyPageViewController.swift */; };
 		08CA26202ABF5AF3006C2443 /* ReadMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261F2ABF5AF3006C2443 /* ReadMessageViewController.swift */; };
@@ -29,12 +30,12 @@
 		08CA262A2ABF5B45006C2443 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26292ABF5B45006C2443 /* Alert.swift */; };
 		08CA262C2ABF5B59006C2443 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA262B2ABF5B59006C2443 /* APIManager.swift */; };
 		08CA262F2ABF5C1B006C2443 /* login.riv in Resources */ = {isa = PBXBuildFile; fileRef = 08CA262E2ABF5C1B006C2443 /* login.riv */; };
-		08CA26312ABF5C48006C2443 /* mainVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26302ABF5C48006C2443 /* mainVideo.mp4 */; };
 		08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */; };
 		08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		088421822ABFA618006DA592 /* mainVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainVideo.mp4; path = ../../../../Downloads/mainVideo.mp4; sourceTree = "<group>"; };
 		08CA25D12ABF597C006C2443 /* MuYaHo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuYaHo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CA25D42ABF597C006C2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CA25D62ABF597C006C2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,19 +57,18 @@
 		08CA26292ABF5B45006C2443 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		08CA262B2ABF5B59006C2443 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		08CA262E2ABF5C1B006C2443 /* login.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.riv; sourceTree = "<group>"; };
-		08CA26302ABF5C48006C2443 /* mainVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainVideo.mp4; sourceTree = "<group>"; };
 		08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic.mp3; sourceTree = "<group>"; };
 		08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loginMusic.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		08CA25CE2ABF597C006C2443 /* Frameworks */ = {
+		B2F84AB6F6D58E783056843A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08CA26142ABF5A7A006C2443 /* SnapKit in Frameworks */,
-				08CA26162ABF5A7A006C2443 /* SnapKit-Dynamic in Frameworks */,
-				08CA26192ABF5A91006C2443 /* RiveRuntime in Frameworks */,
+				0884217A2ABF93BA006DA592 /* RiveRuntime in Frameworks */,
+				0884217D2ABF93C5006DA592 /* SnapKit in Frameworks */,
+				0884217F2ABF93C5006DA592 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,9 +130,9 @@
 		08CA26062ABF59D8006C2443 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				08CA25D82ABF597C006C2443 /* MainViewController.swift */,
-				08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */,
 				08CA26102ABF5A54006C2443 /* LoginViewController.swift */,
+				08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */,
+				08CA25D82ABF597C006C2443 /* MainViewController.swift */,
 				08CA261D2ABF5AD5006C2443 /* MyPageViewController.swift */,
 				08CA261F2ABF5AF3006C2443 /* ReadMessageViewController.swift */,
 				08CA26212ABF5B02006C2443 /* WriteMessageViewController.swift */,
@@ -155,8 +155,8 @@
 			children = (
 				08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */,
 				08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */,
+				088421822ABFA618006DA592 /* mainVideo.mp4 */,
 				08CA262E2ABF5C1B006C2443 /* login.riv */,
-				08CA26302ABF5C48006C2443 /* mainVideo.mp4 */,
 			);
 			path = AssetsFolder;
 			sourceTree = "<group>";
@@ -169,8 +169,8 @@
 			buildConfigurationList = 08CA25FB2ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHo" */;
 			buildPhases = (
 				08CA25CD2ABF597C006C2443 /* Sources */,
-				08CA25CE2ABF597C006C2443 /* Frameworks */,
 				08CA25CF2ABF597C006C2443 /* Resources */,
+				B2F84AB6F6D58E783056843A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,9 +178,9 @@
 			);
 			name = MuYaHo;
 			packageProductDependencies = (
-				08CA26132ABF5A7A006C2443 /* SnapKit */,
-				08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */,
-				08CA26182ABF5A91006C2443 /* RiveRuntime */,
+				088421792ABF93BA006DA592 /* RiveRuntime */,
+				0884217C2ABF93C5006DA592 /* SnapKit */,
+				0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */,
 			);
 			productName = MuYaHo;
 			productReference = 08CA25D12ABF597C006C2443 /* MuYaHo.app */;
@@ -211,8 +211,8 @@
 			);
 			mainGroup = 08CA25C82ABF597B006C2443;
 			packageReferences = (
-				08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 08CA25D22ABF597C006C2443 /* Products */;
 			projectDirPath = "";
@@ -229,8 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */,
-				08CA26312ABF5C48006C2443 /* mainVideo.mp4 in Resources */,
 				08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */,
+				088421832ABFA618006DA592 /* mainVideo.mp4 in Resources */,
 				08CA25DE2ABF597E006C2443 /* Assets.xcassets in Resources */,
 				08CA262F2ABF5C1B006C2443 /* login.riv in Resources */,
 			);
@@ -318,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -375,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -395,11 +395,11 @@
 				DEVELOPMENT_TEAM = VGM28F2FH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MuYaHo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,9 +407,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,11 +426,11 @@
 				DEVELOPMENT_TEAM = VGM28F2FH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MuYaHo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,9 +438,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -465,15 +471,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.5.0;
-			};
-		};
-		08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+		088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios.git";
 			requirement = {
@@ -481,23 +479,31 @@
 				minimumVersion = 5.3.1;
 			};
 		};
+		0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		08CA26132ABF5A7A006C2443 /* SnapKit */ = {
+		088421792ABF93BA006DA592 /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+		0884217C2ABF93C5006DA592 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */ = {
+		0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
-		};
-		08CA26182ABF5A91006C2443 /* RiveRuntime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */;
-			productName = RiveRuntime;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
