@@ -9,46 +9,56 @@
 /* Begin PBXBuildFile section */
 		08CA25D52ABF597C006C2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D42ABF597C006C2443 /* AppDelegate.swift */; };
 		08CA25D72ABF597C006C2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D62ABF597C006C2443 /* SceneDelegate.swift */; };
-		08CA25D92ABF597C006C2443 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D82ABF597C006C2443 /* ViewController.swift */; };
-		08CA25DC2ABF597C006C2443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CA25DA2ABF597C006C2443 /* Main.storyboard */; };
+		08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D82ABF597C006C2443 /* MainViewController.swift */; };
 		08CA25DE2ABF597E006C2443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CA25DD2ABF597E006C2443 /* Assets.xcassets */; };
-		08CA25E12ABF597E006C2443 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CA25DF2ABF597E006C2443 /* LaunchScreen.storyboard */; };
-		08CA25EC2ABF597F006C2443 /* MuYaHoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25EB2ABF597F006C2443 /* MuYaHoTests.swift */; };
-		08CA25F62ABF597F006C2443 /* MuYaHoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25F52ABF597F006C2443 /* MuYaHoUITests.swift */; };
-		08CA25F82ABF597F006C2443 /* MuYaHoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25F72ABF597F006C2443 /* MuYaHoUITestsLaunchTests.swift */; };
+		08CA26092ABF5A06006C2443 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26082ABF5A06006C2443 /* LaunchScreen.swift */; };
+		08CA260B2ABF5A1B006C2443 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA260A2ABF5A1B006C2443 /* Button.swift */; };
+		08CA260D2ABF5A26006C2443 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA260C2ABF5A26006C2443 /* Label.swift */; };
+		08CA260F2ABF5A3A006C2443 /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */; };
+		08CA26112ABF5A54006C2443 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26102ABF5A54006C2443 /* LoginViewController.swift */; };
+		08CA26142ABF5A7A006C2443 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26132ABF5A7A006C2443 /* SnapKit */; };
+		08CA26162ABF5A7A006C2443 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */; };
+		08CA26192ABF5A91006C2443 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 08CA26182ABF5A91006C2443 /* RiveRuntime */; };
+		08CA261C2ABF5AC2006C2443 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */; };
+		08CA261E2ABF5AD5006C2443 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261D2ABF5AD5006C2443 /* MyPageViewController.swift */; };
+		08CA26202ABF5AF3006C2443 /* ReadMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA261F2ABF5AF3006C2443 /* ReadMessageViewController.swift */; };
+		08CA26222ABF5B02006C2443 /* WriteMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26212ABF5B02006C2443 /* WriteMessageViewController.swift */; };
+		08CA26242ABF5B23006C2443 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26232ABF5B23006C2443 /* Sound.swift */; };
+		08CA26262ABF5B2C006C2443 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26252ABF5B2C006C2443 /* Video.swift */; };
+		08CA26282ABF5B3B006C2443 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26272ABF5B3B006C2443 /* Font.swift */; };
+		08CA262A2ABF5B45006C2443 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA26292ABF5B45006C2443 /* Alert.swift */; };
+		08CA262C2ABF5B59006C2443 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA262B2ABF5B59006C2443 /* APIManager.swift */; };
+		08CA262F2ABF5C1B006C2443 /* login.riv in Resources */ = {isa = PBXBuildFile; fileRef = 08CA262E2ABF5C1B006C2443 /* login.riv */; };
+		08CA26312ABF5C48006C2443 /* mainVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26302ABF5C48006C2443 /* mainVideo.mp4 */; };
+		08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */; };
+		08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		08CA25E82ABF597F006C2443 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08CA25C92ABF597B006C2443 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08CA25D02ABF597C006C2443;
-			remoteInfo = MuYaHo;
-		};
-		08CA25F22ABF597F006C2443 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08CA25C92ABF597B006C2443 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08CA25D02ABF597C006C2443;
-			remoteInfo = MuYaHo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		08CA25D12ABF597C006C2443 /* MuYaHo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuYaHo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CA25D42ABF597C006C2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CA25D62ABF597C006C2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08CA25D82ABF597C006C2443 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		08CA25DB2ABF597C006C2443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08CA25D82ABF597C006C2443 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		08CA25DD2ABF597E006C2443 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		08CA25E02ABF597E006C2443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08CA25E22ABF597E006C2443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08CA25E72ABF597F006C2443 /* MuYaHoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuYaHoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		08CA25EB2ABF597F006C2443 /* MuYaHoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuYaHoTests.swift; sourceTree = "<group>"; };
-		08CA25F12ABF597F006C2443 /* MuYaHoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuYaHoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		08CA25F52ABF597F006C2443 /* MuYaHoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuYaHoUITests.swift; sourceTree = "<group>"; };
-		08CA25F72ABF597F006C2443 /* MuYaHoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuYaHoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08CA26082ABF5A06006C2443 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		08CA260A2ABF5A1B006C2443 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		08CA260C2ABF5A26006C2443 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
+		08CA26102ABF5A54006C2443 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		08CA261D2ABF5AD5006C2443 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		08CA261F2ABF5AF3006C2443 /* ReadMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageViewController.swift; sourceTree = "<group>"; };
+		08CA26212ABF5B02006C2443 /* WriteMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMessageViewController.swift; sourceTree = "<group>"; };
+		08CA26232ABF5B23006C2443 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		08CA26252ABF5B2C006C2443 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		08CA26272ABF5B3B006C2443 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		08CA26292ABF5B45006C2443 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		08CA262B2ABF5B59006C2443 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		08CA262E2ABF5C1B006C2443 /* login.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.riv; sourceTree = "<group>"; };
+		08CA26302ABF5C48006C2443 /* mainVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainVideo.mp4; sourceTree = "<group>"; };
+		08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic.mp3; sourceTree = "<group>"; };
+		08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loginMusic.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,20 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08CA25E42ABF597F006C2443 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08CA25EE2ABF597F006C2443 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				08CA26142ABF5A7A006C2443 /* SnapKit in Frameworks */,
+				08CA26162ABF5A7A006C2443 /* SnapKit-Dynamic in Frameworks */,
+				08CA26192ABF5A91006C2443 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				08CA25D32ABF597C006C2443 /* MuYaHo */,
-				08CA25EA2ABF597F006C2443 /* MuYaHoTests */,
-				08CA25F42ABF597F006C2443 /* MuYaHoUITests */,
 				08CA25D22ABF597C006C2443 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,8 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				08CA25D12ABF597C006C2443 /* MuYaHo.app */,
-				08CA25E72ABF597F006C2443 /* MuYaHoTests.xctest */,
-				08CA25F12ABF597F006C2443 /* MuYaHoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,32 +94,71 @@
 		08CA25D32ABF597C006C2443 /* MuYaHo */ = {
 			isa = PBXGroup;
 			children = (
-				08CA25D42ABF597C006C2443 /* AppDelegate.swift */,
-				08CA25D62ABF597C006C2443 /* SceneDelegate.swift */,
-				08CA25D82ABF597C006C2443 /* ViewController.swift */,
-				08CA25DA2ABF597C006C2443 /* Main.storyboard */,
-				08CA25DD2ABF597E006C2443 /* Assets.xcassets */,
-				08CA25DF2ABF597E006C2443 /* LaunchScreen.storyboard */,
+				08CA26042ABF59CB006C2443 /* Model */,
+				08CA26052ABF59D2006C2443 /* View */,
+				08CA26062ABF59D8006C2443 /* Controller */,
+				08CA26072ABF59E8006C2443 /* Launch */,
+				08CA262D2ABF5B6C006C2443 /* AssetsFolder */,
 				08CA25E22ABF597E006C2443 /* Info.plist */,
+				08CA25DD2ABF597E006C2443 /* Assets.xcassets */,
 			);
 			path = MuYaHo;
 			sourceTree = "<group>";
 		};
-		08CA25EA2ABF597F006C2443 /* MuYaHoTests */ = {
+		08CA26042ABF59CB006C2443 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				08CA25EB2ABF597F006C2443 /* MuYaHoTests.swift */,
+				08CA262B2ABF5B59006C2443 /* APIManager.swift */,
 			);
-			path = MuYaHoTests;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		08CA25F42ABF597F006C2443 /* MuYaHoUITests */ = {
+		08CA26052ABF59D2006C2443 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				08CA25F52ABF597F006C2443 /* MuYaHoUITests.swift */,
-				08CA25F72ABF597F006C2443 /* MuYaHoUITestsLaunchTests.swift */,
+				08CA260A2ABF5A1B006C2443 /* Button.swift */,
+				08CA260C2ABF5A26006C2443 /* Label.swift */,
+				08CA26232ABF5B23006C2443 /* Sound.swift */,
+				08CA26252ABF5B2C006C2443 /* Video.swift */,
+				08CA26272ABF5B3B006C2443 /* Font.swift */,
+				08CA26292ABF5B45006C2443 /* Alert.swift */,
+				08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */,
 			);
-			path = MuYaHoUITests;
+			path = View;
+			sourceTree = "<group>";
+		};
+		08CA26062ABF59D8006C2443 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08CA25D82ABF597C006C2443 /* MainViewController.swift */,
+				08CA261B2ABF5AC2006C2443 /* OnBoardingViewController.swift */,
+				08CA26102ABF5A54006C2443 /* LoginViewController.swift */,
+				08CA261D2ABF5AD5006C2443 /* MyPageViewController.swift */,
+				08CA261F2ABF5AF3006C2443 /* ReadMessageViewController.swift */,
+				08CA26212ABF5B02006C2443 /* WriteMessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		08CA26072ABF59E8006C2443 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				08CA25D42ABF597C006C2443 /* AppDelegate.swift */,
+				08CA25D62ABF597C006C2443 /* SceneDelegate.swift */,
+				08CA26082ABF5A06006C2443 /* LaunchScreen.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		08CA262D2ABF5B6C006C2443 /* AssetsFolder */ = {
+			isa = PBXGroup;
+			children = (
+				08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */,
+				08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */,
+				08CA262E2ABF5C1B006C2443 /* login.riv */,
+				08CA26302ABF5C48006C2443 /* mainVideo.mp4 */,
+			);
+			path = AssetsFolder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,45 +177,14 @@
 			dependencies = (
 			);
 			name = MuYaHo;
+			packageProductDependencies = (
+				08CA26132ABF5A7A006C2443 /* SnapKit */,
+				08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */,
+				08CA26182ABF5A91006C2443 /* RiveRuntime */,
+			);
 			productName = MuYaHo;
 			productReference = 08CA25D12ABF597C006C2443 /* MuYaHo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		08CA25E62ABF597F006C2443 /* MuYaHoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 08CA25FE2ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHoTests" */;
-			buildPhases = (
-				08CA25E32ABF597F006C2443 /* Sources */,
-				08CA25E42ABF597F006C2443 /* Frameworks */,
-				08CA25E52ABF597F006C2443 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				08CA25E92ABF597F006C2443 /* PBXTargetDependency */,
-			);
-			name = MuYaHoTests;
-			productName = MuYaHoTests;
-			productReference = 08CA25E72ABF597F006C2443 /* MuYaHoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		08CA25F02ABF597F006C2443 /* MuYaHoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 08CA26012ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHoUITests" */;
-			buildPhases = (
-				08CA25ED2ABF597F006C2443 /* Sources */,
-				08CA25EE2ABF597F006C2443 /* Frameworks */,
-				08CA25EF2ABF597F006C2443 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				08CA25F32ABF597F006C2443 /* PBXTargetDependency */,
-			);
-			name = MuYaHoUITests;
-			productName = MuYaHoUITests;
-			productReference = 08CA25F12ABF597F006C2443 /* MuYaHoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -196,14 +199,6 @@
 					08CA25D02ABF597C006C2443 = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					08CA25E62ABF597F006C2443 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 08CA25D02ABF597C006C2443;
-					};
-					08CA25F02ABF597F006C2443 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 08CA25D02ABF597C006C2443;
-					};
 				};
 			};
 			buildConfigurationList = 08CA25CC2ABF597B006C2443 /* Build configuration list for PBXProject "MuYaHo" */;
@@ -215,13 +210,15 @@
 				Base,
 			);
 			mainGroup = 08CA25C82ABF597B006C2443;
+			packageReferences = (
+				08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 08CA25D22ABF597C006C2443 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				08CA25D02ABF597C006C2443 /* MuYaHo */,
-				08CA25E62ABF597F006C2443 /* MuYaHoTests */,
-				08CA25F02ABF597F006C2443 /* MuYaHoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,23 +228,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08CA25E12ABF597E006C2443 /* LaunchScreen.storyboard in Resources */,
+				08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */,
+				08CA26312ABF5C48006C2443 /* mainVideo.mp4 in Resources */,
+				08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */,
 				08CA25DE2ABF597E006C2443 /* Assets.xcassets in Resources */,
-				08CA25DC2ABF597C006C2443 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08CA25E52ABF597F006C2443 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08CA25EF2ABF597F006C2443 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				08CA262F2ABF5C1B006C2443 /* login.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,62 +243,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08CA25D92ABF597C006C2443 /* ViewController.swift in Sources */,
+				08CA26242ABF5B23006C2443 /* Sound.swift in Sources */,
+				08CA26222ABF5B02006C2443 /* WriteMessageViewController.swift in Sources */,
+				08CA26282ABF5B3B006C2443 /* Font.swift in Sources */,
+				08CA260B2ABF5A1B006C2443 /* Button.swift in Sources */,
+				08CA26092ABF5A06006C2443 /* LaunchScreen.swift in Sources */,
+				08CA260D2ABF5A26006C2443 /* Label.swift in Sources */,
+				08CA26262ABF5B2C006C2443 /* Video.swift in Sources */,
+				08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */,
+				08CA26112ABF5A54006C2443 /* LoginViewController.swift in Sources */,
+				08CA26202ABF5AF3006C2443 /* ReadMessageViewController.swift in Sources */,
+				08CA261E2ABF5AD5006C2443 /* MyPageViewController.swift in Sources */,
 				08CA25D52ABF597C006C2443 /* AppDelegate.swift in Sources */,
+				08CA262C2ABF5B59006C2443 /* APIManager.swift in Sources */,
+				08CA261C2ABF5AC2006C2443 /* OnBoardingViewController.swift in Sources */,
+				08CA260F2ABF5A3A006C2443 /* ViewTransition.swift in Sources */,
+				08CA262A2ABF5B45006C2443 /* Alert.swift in Sources */,
 				08CA25D72ABF597C006C2443 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08CA25E32ABF597F006C2443 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08CA25EC2ABF597F006C2443 /* MuYaHoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08CA25ED2ABF597F006C2443 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08CA25F62ABF597F006C2443 /* MuYaHoUITests.swift in Sources */,
-				08CA25F82ABF597F006C2443 /* MuYaHoUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		08CA25E92ABF597F006C2443 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 08CA25D02ABF597C006C2443 /* MuYaHo */;
-			targetProxy = 08CA25E82ABF597F006C2443 /* PBXContainerItemProxy */;
-		};
-		08CA25F32ABF597F006C2443 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 08CA25D02ABF597C006C2443 /* MuYaHo */;
-			targetProxy = 08CA25F22ABF597F006C2443 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		08CA25DA2ABF597C006C2443 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08CA25DB2ABF597C006C2443 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		08CA25DF2ABF597E006C2443 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08CA25E02ABF597E006C2443 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		08CA25F92ABF597F006C2443 /* Debug */ = {
@@ -491,82 +441,6 @@
 			};
 			name = Release;
 		};
-		08CA25FF2ABF597F006C2443 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGM28F2FH7;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuYaHo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MuYaHo";
-			};
-			name = Debug;
-		};
-		08CA26002ABF597F006C2443 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGM28F2FH7;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuYaHo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MuYaHo";
-			};
-			name = Release;
-		};
-		08CA26022ABF597F006C2443 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGM28F2FH7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MuYaHo;
-			};
-			name = Debug;
-		};
-		08CA26032ABF597F006C2443 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VGM28F2FH7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamCommit.MuYaHoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MuYaHo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,25 +462,44 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08CA25FE2ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				08CA25FF2ABF597F006C2443 /* Debug */,
-				08CA26002ABF597F006C2443 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		08CA26012ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				08CA26022ABF597F006C2443 /* Debug */,
-				08CA26032ABF597F006C2443 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+		08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08CA26132ABF5A7A006C2443 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		08CA26152ABF5A7A006C2443 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08CA26122ABF5A7A006C2443 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		08CA26182ABF5A91006C2443 /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08CA26172ABF5A91006C2443 /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08CA25C92ABF597B006C2443 /* Project object */;
 }
