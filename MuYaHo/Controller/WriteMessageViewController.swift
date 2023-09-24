@@ -61,7 +61,9 @@ class WriteMessageViewController: UIViewController {
         return button
     }()
     
-    
+    deinit {
+        print("WriteMessageViewController deinit!!")
+    }
 }
 
 //MARK: - View Cycle
@@ -140,6 +142,30 @@ extension WriteMessageViewController {
         }
     }
     
+//    @objc func sendMessage() {
+//        guard let accessToken = APIManager.getTokenFromKeychain() else {
+//            print("Error retrieving token from keychain.")
+//            return
+//        }
+//        
+//        APIManager.shared.sendMessage(content: messageTextView.text, accessToken: accessToken) { [weak self] result in
+//            DispatchQueue.main.async {
+//                
+//                switch result {
+//                case .success(let isSuccess):
+//                    if isSuccess {
+//                        print("Message sent successfully!")
+//                        let sendCompletionVC = SendCompletionViewController()
+//                        self?.navigationController?.pushViewController(sendCompletionVC, animated: true)
+//                    } else {
+//                        print("Failed to send message.")
+//                    }
+//                case .failure(let error):
+//                    print("Error sending message: \(error)")
+//                }
+//            }
+//        }
+//    }
     @objc func sendMessage() {
         guard let accessToken = APIManager.getTokenFromKeychain() else {
             print("Error retrieving token from keychain.")
@@ -148,13 +174,19 @@ extension WriteMessageViewController {
         
         APIManager.shared.sendMessage(content: messageTextView.text, accessToken: accessToken) { [weak self] result in
             DispatchQueue.main.async {
-                
                 switch result {
                 case .success(let isSuccess):
                     if isSuccess {
                         print("Message sent successfully!")
                         let sendCompletionVC = SendCompletionViewController()
-                        self?.navigationController?.pushViewController(sendCompletionVC, animated: true)
+                        
+                        // Present sendCompletionVC modally
+                        self?.present(sendCompletionVC, animated: true) {
+                            // Remove WriteMessageViewController from the navigation stack
+                            if let index = self?.navigationController?.viewControllers.firstIndex(of: self!) {
+                                self?.navigationController?.viewControllers.remove(at: index)
+                            }
+                        }
                     } else {
                         print("Failed to send message.")
                     }
@@ -164,6 +196,7 @@ extension WriteMessageViewController {
             }
         }
     }
+
 }
 
 

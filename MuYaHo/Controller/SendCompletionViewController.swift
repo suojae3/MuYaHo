@@ -10,7 +10,6 @@ class SendCompletionViewController: UIViewController {
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "home2")
-        imageView.alpha = 0.5
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -33,8 +32,7 @@ class SendCompletionViewController: UIViewController {
         return label
     }()
     
-        let rightBarButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonTapped))
-    
+
     deinit {
         print("SendCompletionViewController deinit!!!")
     }
@@ -45,8 +43,7 @@ class SendCompletionViewController: UIViewController {
 extension SendCompletionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        setupUI()
     }
 }
 
@@ -54,10 +51,6 @@ extension SendCompletionViewController {
 //MARK: - Button Action
 extension SendCompletionViewController {
     
-    @objc func closeButtonTapped() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
-
 }
 
 
@@ -67,7 +60,6 @@ extension SendCompletionViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(completionMail)
         view.addSubview(completionLabel)
-        navigationItem.rightBarButtonItem = rightBarButton
 
         setupConstraints()
     }
@@ -88,6 +80,8 @@ extension SendCompletionViewController {
         }
     }
 }
+
+
 
 
 
