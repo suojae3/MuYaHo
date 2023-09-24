@@ -57,9 +57,11 @@ extension OnBoardingViewController {
         view.addSubview(textField)
         view.addSubview(enrolledButton)
         constraints()
+        
     }
     
     func constraints() {
+        
         backgroundImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -71,7 +73,9 @@ extension OnBoardingViewController {
             make.height.equalTo(50)
         }
     }
+    
 }
+
 
 //MARK: - Transition Effect
 extension OnBoardingViewController {

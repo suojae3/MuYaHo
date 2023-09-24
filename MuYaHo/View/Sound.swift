@@ -5,7 +5,7 @@ class SoundEffect {
     
     var oceanAudioPlayer: AVAudioPlayer?
     var windAudioPlayer: AVAudioPlayer?
-    let defaultVolume: Float = 0.3
+    let defaultVolume: Float = 0.2
         
     func playOceanSound() {
         guard let url = Bundle.main.url(forResource: "mainMusic", withExtension: "mp3") else { return }

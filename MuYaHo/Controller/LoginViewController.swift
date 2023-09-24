@@ -160,20 +160,32 @@ extension LoginViewController {
 }
 
 //MARK: - Transition Effect
+//extension LoginViewController {
+//    func presentGreetVC() {
+//        let onBoardingVC = OnBoardingViewController()
+//        onBoardingVC.modalTransitionStyle = .crossDissolve
+//        onBoardingVC.modalPresentationStyle = .fullScreen
+//        soundEffect.windAudioPlayer?.stop()
+//        present(onBoardingVC, animated: true)
+//    }
+//}
+
+//MARK: - Transition Effect
 extension LoginViewController {
     func presentGreetVC() {
-//        self.dismiss(animated: false) { [weak self] in
-//            let greetVC = OnBoardingViewController()
-//            let fadeTransitioningDelegate = FadeTransitioningDelegate()
-//            greetVC.modalPresentationStyle = .custom
-//            greetVC.transitioningDelegate = fadeTransitioningDelegate
-//            self?.present(greetVC, animated: true)
-//        }
-        
-        let onBoardingVC = OnBoardingViewController()
-        onBoardingVC.modalTransitionStyle = .crossDissolve
-        onBoardingVC.modalPresentationStyle = .fullScreen
-        soundEffect.windAudioPlayer?.stop()
-        present(onBoardingVC, animated: true)
+        UIView.animate(withDuration: 2.0, animations: {
+            self.view.alpha = 0.0
+        }) { [weak self] _ in
+            let onBoardingVC = OnBoardingViewController()
+            onBoardingVC.modalTransitionStyle = .crossDissolve
+            onBoardingVC.modalPresentationStyle = .overFullScreen
+            onBoardingVC.view.alpha = 0.0 // Start with alpha 0
+            self?.soundEffect.windAudioPlayer?.stop()
+            self?.present(onBoardingVC, animated: false, completion: {
+                UIView.animate(withDuration: 2.0) {
+                    onBoardingVC.view.alpha = 1.0
+                }
+            })
+        }
     }
 }
