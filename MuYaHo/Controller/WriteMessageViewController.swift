@@ -52,13 +52,13 @@ class SendMessageViewController: UIViewController {
     }()
     
     private lazy var sendButton:CustomButton = {
-        let button = CustomButton(style: .sendMessage)
+        let button = CustomButton(style: .sendMessageButton)
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
     
     private lazy var changeLetterButton:CustomButton = {
-        let button = CustomButton(style: .changeLetter)
+        let button = CustomButton(style: .changeLetterButton)
         button.addTarget(self, action: #selector(changeLetter), for: .touchUpInside)
         return button
     }()

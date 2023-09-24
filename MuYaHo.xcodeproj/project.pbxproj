@@ -11,6 +11,8 @@
 		0884217D2ABF93C5006DA592 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217C2ABF93C5006DA592 /* SnapKit */; };
 		0884217F2ABF93C5006DA592 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */; };
 		088421832ABFA618006DA592 /* mainVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 088421822ABFA618006DA592 /* mainVideo.mp4 */; };
+		088421852ABFF8EA006DA592 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088421842ABFF8EA006DA592 /* ImageView.swift */; };
+		088421872AC001C7006DA592 /* GamjaFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */; };
 		08CA25D52ABF597C006C2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D42ABF597C006C2443 /* AppDelegate.swift */; };
 		08CA25D72ABF597C006C2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D62ABF597C006C2443 /* SceneDelegate.swift */; };
 		08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D82ABF597C006C2443 /* MainViewController.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		088421822ABFA618006DA592 /* mainVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainVideo.mp4; path = ../../../../Downloads/mainVideo.mp4; sourceTree = "<group>"; };
+		088421842ABFF8EA006DA592 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GamjaFlower-Regular.ttf"; sourceTree = "<group>"; };
 		08CA25D12ABF597C006C2443 /* MuYaHo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuYaHo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CA25D42ABF597C006C2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CA25D62ABF597C006C2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				08CA26252ABF5B2C006C2443 /* Video.swift */,
 				08CA26272ABF5B3B006C2443 /* Font.swift */,
 				08CA26292ABF5B45006C2443 /* Alert.swift */,
+				088421842ABFF8EA006DA592 /* ImageView.swift */,
 				08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */,
 			);
 			path = View;
@@ -157,6 +162,7 @@
 				08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */,
 				088421822ABFA618006DA592 /* mainVideo.mp4 */,
 				08CA262E2ABF5C1B006C2443 /* login.riv */,
+				088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */,
 			);
 			path = AssetsFolder;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */,
 				08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */,
 				088421832ABFA618006DA592 /* mainVideo.mp4 in Resources */,
+				088421872AC001C7006DA592 /* GamjaFlower-Regular.ttf in Resources */,
 				08CA25DE2ABF597E006C2443 /* Assets.xcassets in Resources */,
 				08CA262F2ABF5C1B006C2443 /* login.riv in Resources */,
 			);
@@ -249,6 +256,7 @@
 				08CA260B2ABF5A1B006C2443 /* Button.swift in Sources */,
 				08CA26092ABF5A06006C2443 /* LaunchScreen.swift in Sources */,
 				08CA260D2ABF5A26006C2443 /* Label.swift in Sources */,
+				088421852ABFF8EA006DA592 /* ImageView.swift in Sources */,
 				08CA26262ABF5B2C006C2443 /* Video.swift in Sources */,
 				08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */,
 				08CA26112ABF5A54006C2443 /* LoginViewController.swift in Sources */,

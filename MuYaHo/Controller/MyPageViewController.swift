@@ -41,10 +41,9 @@ class MyPageViewController: UIViewController {
         return label
     }()
     
-    private lazy var musicButton: UIButton = {
-        let button = UIButton()
-        let soundEffect = SoundEffect()
-        soundEffect.oceanAudioPlayer?.stop()
+    private lazy var musicOffButton: CustomButton = {
+        let button = CustomButton(style: .musicOffButton)
+        button.addTarget(self, action: #selector(toggleOffMusic), for: .touchUpInside)
         return button
     }()
     
@@ -56,6 +55,15 @@ class MyPageViewController: UIViewController {
     
 }
 
+//MARK: - Button Action
+extension MyPageViewController {
+    @objc func toggleOffMusic() {
+        let soundToggle = SoundEffect().oceanAudioPlayer?.stop()
+        
+        //나중에 음악 토글 검색해서 넣기
+        //soundToggle.toggle()
+    }
+}
 
 
 

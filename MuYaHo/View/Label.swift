@@ -3,11 +3,13 @@ import UIKit
 class CustomLabel: UILabel {
     
     enum LabelStyle {
+        case loginTitleLabel
         case myPageLabel
         case myPageCount
         case myPageCountRightLabel
         case myPageMenuLabel
         case mainPageLabel
+        case bottleCountLabel
     }
     
     override init(frame: CGRect) {
@@ -22,8 +24,10 @@ class CustomLabel: UILabel {
         self.init()
         
         switch style {
+        case .loginTitleLabel:
+            setupLoginTitleLabel()
         case .myPageLabel:
-            myPageLabel()
+            setupMyPageLabel()
         case .myPageCount:
             setupMyPageCountLabel()
         case .myPageCountRightLabel:
@@ -32,10 +36,18 @@ class CustomLabel: UILabel {
             setupMyPageMenuLabel()
         case .mainPageLabel:
             setupMainPageLabel()
+        case .bottleCountLabel:
+            setupBottleCountLabel()
         }
     }
     
-    private func myPageLabel() {
+    private func setupLoginTitleLabel() {
+        self.text = "무야호~"
+        self.font = CustomFont.gamjaFlowerRegular.size(50)
+        self.textAlignment = .center
+    }
+    
+    private func setupMyPageLabel() {
         self.backgroundColor = .black
         self.layer.cornerRadius = 20
     }
@@ -48,6 +60,15 @@ class CustomLabel: UILabel {
     
     
     private func setupMyPageMenuLabel() {
+    }
+    
+    
+    private func setupBottleCountLabel() {
+        self.text = " 3 / 5" // example text
+        self.font = CustomFont.gamjaFlowerRegular.size(30)
+        self.textColor = .white
+        self.textAlignment = .center
+
     }
     
     private func setupMainPageLabel() {

@@ -18,13 +18,8 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.text = "MainLabel"
-        label.textAlignment = .center
-        label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.layer.borderWidth = 3
-        label.layer.cornerRadius = 20
+    private lazy var loginTitle: CustomLabel = {
+        let label = CustomLabel(style: .loginTitleLabel)
         return label
     }()
     
@@ -134,15 +129,15 @@ extension LoginViewController {
     
     func setupUI() {
         view.addSubview(loginButton)
-        view.addSubview(label)
+        view.addSubview(loginTitle)
         self.setupConstraints()
     }
     
     func setupConstraints() {
         
-        label.snp.makeConstraints { make in
+        loginTitle.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(100)
+            make.top.equalToSuperview().offset(150)
             make.height.equalTo(50)
             make.width.equalTo(200)
             
