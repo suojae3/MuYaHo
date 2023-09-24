@@ -14,6 +14,7 @@
 		088421852ABFF8EA006DA592 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088421842ABFF8EA006DA592 /* ImageView.swift */; };
 		088421872AC001C7006DA592 /* GamjaFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */; };
 		088421892AC02618006DA592 /* SendCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088421882AC02618006DA592 /* SendCompletionViewController.swift */; };
+		08BB05C82AC05E33002287FB /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB05C72AC05E33002287FB /* Keyboard.swift */; };
 		08CA25D52ABF597C006C2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D42ABF597C006C2443 /* AppDelegate.swift */; };
 		08CA25D72ABF597C006C2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D62ABF597C006C2443 /* SceneDelegate.swift */; };
 		08CA25D92ABF597C006C2443 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CA25D82ABF597C006C2443 /* MainViewController.swift */; };
@@ -42,6 +43,7 @@
 		088421842ABFF8EA006DA592 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GamjaFlower-Regular.ttf"; sourceTree = "<group>"; };
 		088421882AC02618006DA592 /* SendCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCompletionViewController.swift; sourceTree = "<group>"; };
+		08BB05C72AC05E33002287FB /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		08CA25D12ABF597C006C2443 /* MuYaHo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuYaHo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CA25D42ABF597C006C2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CA25D62ABF597C006C2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				08CA26292ABF5B45006C2443 /* Alert.swift */,
 				088421842ABFF8EA006DA592 /* ImageView.swift */,
 				08CA260E2ABF5A3A006C2443 /* ViewTransition.swift */,
+				08BB05C72AC05E33002287FB /* Keyboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				08CA26242ABF5B23006C2443 /* Sound.swift in Sources */,
 				08CA26222ABF5B02006C2443 /* WriteMessageViewController.swift in Sources */,
+				08BB05C82AC05E33002287FB /* Keyboard.swift in Sources */,
 				088421892AC02618006DA592 /* SendCompletionViewController.swift in Sources */,
 				08CA26282ABF5B3B006C2443 /* Font.swift in Sources */,
 				08CA260B2ABF5A1B006C2443 /* Button.swift in Sources */,

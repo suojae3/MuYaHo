@@ -3,46 +3,80 @@ import RiveRuntime
 import SnapKit
 import LocalAuthentication
 
-
-//MARK: - Properties
 class LoginViewController: UIViewController {
     
-    let soundEffect = SoundEffect()
-    let context = LAContext()
-    var error: NSError? = nil
-    let reason = "Please authenticate yourself to proceed."
-    let simpleVM = RiveViewModel(fileName: "login")
+    // MARK: - Properties
+    private let soundEffect = SoundEffect()
+    private let context = LAContext()
+    private var error: NSError? = nil
+    private let reason = "Please authenticate yourself to proceed."
+    private let simpleVM = RiveViewModel(fileName: "login")
     
-    private lazy var riveView: RiveView = {
-        let view = RiveView()
-        return view
-    }()
-    
-    private lazy var loginTitle: CustomLabel = {
-        let label = CustomLabel(style: .loginTitleLabel)
-        return label
-    }()
-    
-    
+    private lazy var riveView: RiveView = RiveView()
+    private lazy var loginTitle: CustomLabel = CustomLabel(style: .loginTitleLabel)
     private lazy var loginButton: CustomButton = {
         let button = CustomButton(style: .login)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
-    
-    private lazy var background: UIImageView = {
-        let background = UIImageView()
-        return background
-    }()
+    private lazy var background: UIImageView = UIImageView()
     
     deinit {
         print("LoginViewController has been deinitialized!")
     }
+    
+    // MARK: - View Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear called")
+        soundEffect.playWindSound()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureRiveBackground()
+        setupUI()
+    }
 }
 
-//MARK: - Button Action: Login
+// MARK: - UI Configuration
+private extension LoginViewController {
+    
+    func configureRiveBackground() {
+        let riveView = simpleVM.createRiveView()
+        view.addSubview(riveView)
+        let width: CGFloat = 1000
+        let height: CGFloat = 1000
+        let x: CGFloat = (view.bounds.width - width) / 2
+        let y: CGFloat = (view.bounds.height - height) / 2
+        riveView.frame = CGRect(x: x, y: y, width: width, height: height)
+    }
+    
+    func setupUI() {
+        view.addSubview(loginButton)
+        view.addSubview(loginTitle)
+        setupConstraints()
+    }
+    
+    func setupConstraints() {
+        loginTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(150)
+            make.height.equalTo(50)
+            make.width.equalTo(200)
+        }
+        
+        loginButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-100)
+            make.height.equalTo(50)
+            make.width.equalTo(200)
+        }
+    }
+}
 
-extension LoginViewController {
+// MARK: - Button Actions
+private extension LoginViewController {
     
     @objc func loginButtonTapped() {
         guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else {
@@ -60,11 +94,8 @@ extension LoginViewController {
             }
         }
     }
-}
-//MARK: - handleAuthentication
-
-extension LoginViewController {
-    private func handleAuthenticationSuccess() {
+    
+    func handleAuthenticationSuccess() {
         var userUUID = APIManager.getUUIDFromKeychain()
         if userUUID == nil {
             userUUID = UUID().uuidString
@@ -82,91 +113,20 @@ extension LoginViewController {
                     self?.presentGreetVC()
                 case .failure(let error):
                     print("Error fetching token:", error.localizedDescription)
-//                    self?.showAlert(title: "Error", message: "Failed to fetch token from server.")
                 }
             }
         }
     }
     
-    private func handleAuthenticationFailure(error: Error?) {
+    func handleAuthenticationFailure(error: Error?) {
         let errorMessage = error?.localizedDescription ?? "Unknown error"
         print("Authentication failed. Reason: \(errorMessage)")
-//        showAlert(title: "Error", message: "Authentication failed. Please try again.")
     }
 }
 
-//MARK: - View Cycle
-
-extension LoginViewController {
+// MARK: - Transitions
+private extension LoginViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear called")
-        soundEffect.playWindSound()
-    }
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        //Rive Background
-        let riveView = simpleVM.createRiveView()
-        view.addSubview(riveView)
-        let width: CGFloat = 1000
-        let height: CGFloat = 1000
-        let x: CGFloat = (view.bounds.width - width) / 2
-        let y: CGFloat = (view.bounds.height - height) / 2
-        riveView.frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        //setupUI
-        setupUI()
-    }
-}
-
-
-//MARK: - Setup UI
-extension LoginViewController {
-    
-    func setupUI() {
-        view.addSubview(loginButton)
-        view.addSubview(loginTitle)
-        self.setupConstraints()
-    }
-    
-    func setupConstraints() {
-        
-        loginTitle.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(150)
-            make.height.equalTo(50)
-            make.width.equalTo(200)
-            
-            
-        }
-        
-        loginButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-100)
-            make.height.equalTo(50)
-            make.width.equalTo(200)
-        }
-        
-    }
-}
-
-//MARK: - Transition Effect
-//extension LoginViewController {
-//    func presentGreetVC() {
-//        let onBoardingVC = OnBoardingViewController()
-//        onBoardingVC.modalTransitionStyle = .crossDissolve
-//        onBoardingVC.modalPresentationStyle = .fullScreen
-//        soundEffect.windAudioPlayer?.stop()
-//        present(onBoardingVC, animated: true)
-//    }
-//}
-
-//MARK: - Transition Effect
-extension LoginViewController {
     func presentGreetVC() {
         UIView.animate(withDuration: 2.0, animations: {
             self.view.alpha = 0.0
@@ -174,7 +134,7 @@ extension LoginViewController {
             let onBoardingVC = OnBoardingViewController()
             onBoardingVC.modalTransitionStyle = .crossDissolve
             onBoardingVC.modalPresentationStyle = .overFullScreen
-            onBoardingVC.view.alpha = 0.0 // Start with alpha 0
+            onBoardingVC.view.alpha = 0.0
             self?.soundEffect.windAudioPlayer?.stop()
             self?.present(onBoardingVC, animated: false, completion: {
                 UIView.animate(withDuration: 2.0) {

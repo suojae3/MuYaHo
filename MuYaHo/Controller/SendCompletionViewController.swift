@@ -5,7 +5,7 @@ import UIKit
 import SnapKit
 
 //Properties & Deinit
-class SendCompletionViewController:UIViewController {
+class SendCompletionViewController: UIViewController {
     
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -33,6 +33,8 @@ class SendCompletionViewController:UIViewController {
         return label
     }()
     
+        let rightBarButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonTapped))
+    
     deinit {
         print("SendCompletionViewController deinit!!!")
     }
@@ -44,7 +46,18 @@ extension SendCompletionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
     }
+}
+
+
+//MARK: - Button Action
+extension SendCompletionViewController {
+    
+    @objc func closeButtonTapped() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
 }
 
 
@@ -54,6 +67,8 @@ extension SendCompletionViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(completionMail)
         view.addSubview(completionLabel)
+        navigationItem.rightBarButtonItem = rightBarButton
+
         setupConstraints()
     }
     
@@ -64,7 +79,7 @@ extension SendCompletionViewController {
         
         completionMail.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(5.0/7.0)
         }
         
         completionLabel.snp.makeConstraints { make in
