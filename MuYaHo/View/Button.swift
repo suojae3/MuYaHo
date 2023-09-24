@@ -88,6 +88,12 @@ class CustomButton: UIButton {
         self.layer.backgroundColor = UIColor(red: 0.09, green: 0.714, blue: 0.737, alpha: 1).cgColor
         self.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         self.setImage(UIImage(named: "writeIcon"), for: .normal)
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowRadius = 10
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+
     }
     
     private func setupMypageButton() {
@@ -97,10 +103,17 @@ class CustomButton: UIButton {
     
     
     private func setupSendMessageButton() {
-        self.frame = CGRect(x: 0, y: 0, width: 160, height: 50)
+        self.frame = CGRect(x: 0, y: 0, width: 100, height: 80)
+        self.layer.cornerRadius = 20
         self.layer.backgroundColor = UIColor(red: 0.09, green: 0.714, blue: 0.737, alpha: 1).cgColor
-        self.setTitle("편지전송", for: .normal)
+        self.setTitle("  편지전송", for: .normal)
         self.setImage(UIImage(systemName: "envelope"), for: .normal)
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowRadius = 10
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+
     }
     
     
@@ -116,6 +129,9 @@ class CustomButton: UIButton {
     }
     
     private func setupMusicButton() {
+        
+        
+        
     }
     
     

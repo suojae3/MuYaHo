@@ -6,7 +6,9 @@ class SoundEffect {
     var oceanAudioPlayer: AVAudioPlayer?
     var windAudioPlayer: AVAudioPlayer?
     let defaultVolume: Float = 0.2
-        
+    let audioSession = AVAudioSession.sharedInstance()
+ 
+
     func playOceanSound() {
         guard let url = Bundle.main.url(forResource: "mainMusic", withExtension: "mp3") else { return }
         do {
@@ -14,6 +16,9 @@ class SoundEffect {
             oceanAudioPlayer?.numberOfLoops = -1
             oceanAudioPlayer?.play()
             oceanAudioPlayer?.volume = defaultVolume
+            try audioSession.setCategory(.playback, mode: .default)
+            try audioSession.setActive(true)
+
 
         } catch {
             print("Error playing audio: \(error.localizedDescription)")

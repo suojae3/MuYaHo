@@ -3,17 +3,34 @@ import SnapKit
 
 
 //MARK: - Properties
-class SendMessageViewController: UIViewController {
+class WriteMessageViewController: UIViewController {
     
+    let tabBarButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward.circle"), style: .plain, target: self, action: #selector(handleBackButton))
+    
+
+
+    // Define the UIImageView
+    private lazy var backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "home")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    // Update the messageTextView definition
     private lazy var messageTextView: UITextView = {
         let textView = UITextView()
         textView.isUserInteractionEnabled = true
-        textView.backgroundColor = .black
-        textView.textColor = .white
+        textView.backgroundColor = .clear  // Make background transparent
+        textView.textColor = .black
         textView.font = UIFont.systemFont(ofSize: 20)
         textView.autocorrectionType = .no
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderWidth = 1.0
         return textView
     }()
+    
     
     private lazy var textCountLabel: UILabel = {
         let label = UILabel()
@@ -29,25 +46,6 @@ class SendMessageViewController: UIViewController {
         imageView.image = UIImage(named: "home")
         imageView.contentMode = .scaleAspectFill
         imageView.alpha = 0.3
-        return imageView
-    }()
-    
-    private lazy var subLetterView1: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home2")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    private lazy var subLetterView2: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home3")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    private lazy var subLetterView3: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home4")
-        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -67,21 +65,43 @@ class SendMessageViewController: UIViewController {
 }
 
 //MARK: - View Cycle
-extension SendMessageViewController {
+extension WriteMessageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = tabBarButton
         setupUI()
-        setupNavButton()
         messageTextView.delegate = self
     }
-    
+}
+
+extension WriteMessageViewController {
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
     
     @objc func changeLetter() {
         
+    }
+    
+    @objc func handleBackButton() {
+        if !messageTextView.text.isEmpty {
+
+            let alertController = UIAlertController(title: "보내지 못한 편지", message: "\n아직 보내지 못한 편지가 남아있어요\n메세지는 저장되지 않아요 :)", preferredStyle: .alert)
+            
+            let goBackAction = UIAlertAction(title: "Go Back", style: .destructive) { [weak self] _ in
+                self?.dismiss(animated: true)
+            }
+            
+            let stayAction = UIAlertAction(title: "Stay", style: .cancel, handler: nil)
+            
+            alertController.addAction(goBackAction)
+            alertController.addAction(stayAction)
+            
+            present(alertController, animated: true, completion: nil)
+        } else {
+            dismiss(animated: true)
+        }
     }
     
     @objc func sendMessage() {
@@ -98,28 +118,22 @@ extension SendMessageViewController {
             }
         }
     }
-    
-    
-    
 }
 
 
-extension SendMessageViewController {
-    func setupNavButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.rightBarButtonItem
-    }
-}
+
+
 
 
 
 //MARK: - Setup UI
 
-private extension SendMessageViewController {
+private extension WriteMessageViewController {
     func setupUI() {
         view.backgroundColor = .white
         view.addSubview(letterView)
         view.addSubview(sendButton)
+        view.addSubview(backgroundImageView)
         view.addSubview(messageTextView)
         view.addSubview(textCountLabel)
         messageTextView.delegate = self
@@ -130,7 +144,7 @@ private extension SendMessageViewController {
 }
 
 //MARK: - Constraints
-private extension SendMessageViewController {
+private extension WriteMessageViewController {
     func setupConstraints() {
         letterView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -144,23 +158,33 @@ private extension SendMessageViewController {
         }
         
         messageTextView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(210)
+            make.top.equalToSuperview().offset(180)
             make.bottom.equalToSuperview().offset(-220)
             make.centerX.equalToSuperview()
             make.width.equalTo(350)
             make.height.equalTo(430)
         }
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.equalTo(messageTextView.snp.top)
+            make.bottom.equalTo(messageTextView.snp.bottom)
+            make.left.equalTo(messageTextView.snp.left)
+            make.right.equalTo(messageTextView.snp.right)
+        }
         
         textCountLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(letterView).offset(-50)
-            make.right.equalTo(letterView).offset(-30)
+            make.bottom.equalTo(messageTextView.snp.bottom).offset(-20)
+            make.right.equalTo(messageTextView.snp.right).offset(-20)
+        }
+        
+        sendButton.snp.makeConstraints { make in
+            make.top.equalTo(messageTextView.snp.bottom).offset(80)
+            make.centerX.equalToSuperview()
         }
     }
 }
 
 //MARK: - UITextViewDelegate
-
-extension SendMessageViewController: UITextViewDelegate {
+extension WriteMessageViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
@@ -186,7 +210,7 @@ extension SendMessageViewController: UITextViewDelegate {
 
 //MARK: - Popup sheet
 
-extension SendMessageViewController {
+extension WriteMessageViewController {
     func popUpsheet() {
         
     }

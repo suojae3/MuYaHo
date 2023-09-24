@@ -33,6 +33,12 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(mainBottleButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    private lazy var writeMessageButton = {
+        let button = CustomButton(style: .writeMessage)
+        button.addTarget(self, action: #selector(writeMessageButtonTapped), for: .touchUpInside)
+        return button
+    }()
 }
 
 //MARK: - View Cycle
@@ -67,6 +73,7 @@ extension MainViewController {
         view.addSubview(myPageButton)
         view.addSubview(bottleCount)
         view.addSubview(mainBottleButton)
+        view.addSubview(writeMessageButton)
         bottleCount.addSubview(bottleCountLabel)
         setupConstraints()
     }
@@ -103,7 +110,11 @@ extension MainViewController {
             make.centerY.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(100)
-            
+        }
+        
+        writeMessageButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-50)
+            make.right.equalToSuperview().offset(-50)
         }
         
     }
@@ -119,6 +130,15 @@ extension MainViewController {
     }
     
     @objc private func myPageButtonTapped() {
+    }
+    
+    @objc private func writeMessageButtonTapped() {
+        let writeMessageVC = WriteMessageViewController()
+        let navController = UINavigationController(rootViewController: writeMessageVC)
+
+        navController.modalTransitionStyle = .crossDissolve
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
 }
 

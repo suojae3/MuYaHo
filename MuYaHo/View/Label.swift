@@ -10,6 +10,9 @@ class CustomLabel: UILabel {
         case myPageMenuLabel
         case mainPageLabel
         case bottleCountLabel
+        
+        //CompletionView
+        case completionLabel
     }
     
     override init(frame: CGRect) {
@@ -38,6 +41,8 @@ class CustomLabel: UILabel {
             setupMainPageLabel()
         case .bottleCountLabel:
             setupBottleCountLabel()
+        case .completionLabel:
+            setupCompletionLabel()
         }
     }
     
@@ -76,5 +81,11 @@ class CustomLabel: UILabel {
         self.textColor = .black
         self.font = UIFont.boldSystemFont(ofSize: 20)
         self.font = CustomFont.gamjaFlowerRegular.size(20)
+    }
+    
+    private func setupCompletionLabel() {
+        self.text = "편지가 전송되었어요\n소중한 이야기 감사해요!"
+        self.font = CustomFont.gamjaFlowerRegular.size(20)
+        self.textColor = .black
     }
 }
