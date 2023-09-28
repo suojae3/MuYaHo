@@ -4,7 +4,7 @@
 import UIKit
 import SnapKit
 
-//Properties & Deinit
+//MARK: - Properties & Deinit
 class SendCompletionViewController: UIViewController {
     
     private lazy var backgroundImageView: UIImageView = {
@@ -32,6 +32,11 @@ class SendCompletionViewController: UIViewController {
         return label
     }()
     
+    private lazy var backToMainButton: CustomButton = {
+        let button = CustomButton(style: .login)
+        button.addTarget(self, action: #selector(backToMainButtonTapepd), for: .touchUpInside)
+        return button
+    }()
 
     deinit {
         print("SendCompletionViewController deinit!!!")
@@ -50,6 +55,13 @@ extension SendCompletionViewController {
 
 //MARK: - Button Action
 extension SendCompletionViewController {
+    @objc func backToMainButtonTapepd() {
+        let mainVC = MainViewController()
+        mainVC.modalTransitionStyle = .crossDissolve
+        mainVC.modalPresentationStyle = .fullScreen
+        present(mainVC, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
 }
 
@@ -60,23 +72,28 @@ extension SendCompletionViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(completionMail)
         view.addSubview(completionLabel)
-
+        view.addSubview(backToMainButton)
         setupConstraints()
     }
     
     func setupConstraints() {
-        backgroundImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        backgroundImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        completionMail.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().multipliedBy(5.0/7.0)
+        completionMail.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().multipliedBy(5.0/7.0)
         }
         
-        completionLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(completionMail.snp.bottom).offset(30)
+        completionLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(completionMail.snp.bottom).offset(30)
+        }
+        
+        backToMainButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(completionLabel.snp.bottom).offset(30)
         }
     }
 }

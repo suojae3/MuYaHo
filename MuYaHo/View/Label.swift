@@ -53,11 +53,15 @@ class CustomLabel: UILabel {
     }
     
     private func setupMyPageLabel() {
-        self.backgroundColor = .black
-        self.layer.cornerRadius = 20
+        self.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        self.layer.cornerRadius = 12
+        self.text = "진주를 품은 나야"
+        self.font = CustomFont.gamjaFlowerRegular.size(20)
+
     }
     
     private func setupMyPageCountLabel() {
+        
     }
     
     private func setupMyPageCountRightLabel() {

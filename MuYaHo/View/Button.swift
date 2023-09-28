@@ -4,23 +4,23 @@ class CustomButton: UIButton {
     
     enum ButtonStyle {
         
-        //Login
+        //Login VC
         case login
         
-        //OnBoarding
+        //OnBoardingVC
         case onBoarding
         
-        //Main
+        //MainVC
         case mainBottleButton
         case writeMessage
         case myPageButton
         case sendMessageButton
         
-        //My Page
+        //MyPageVC
         case musicOffButton
         case notificationButton
         
-        //Reading Letter
+        //ReadingLetterVC
         case changeLetterButton
     }
     

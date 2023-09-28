@@ -2,25 +2,22 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-
-//MARK: - Properties
 class MainViewController: UIViewController {
     
-    var videoBackground: LoopingVideoPlayerUIView!
+    // MARK: - Properties
+    private var videoBackground: LoopingVideoPlayerUIView!
     private let soundEffect = SoundEffect()
+    private let fadeTransitioningDelegate = FadeTransitioningDelegate()
     
     private lazy var bottleCount: UIImageView = {
-        let imageView = UIImageView()
-        let bottleCountImage = UIImage(named: "bottleCount")
-        imageView.image = bottleCountImage
+        let imageView = UIImageView(image: UIImage(named: "bottleCount"))
         return imageView
     }()
     
-    private lazy var bottleCountLabel: CustomLabel = {
-        let label = CustomLabel(style: .bottleCountLabel)
+    private lazy var bottleCountLabel: UILabel = {
+        let label = UILabel()
         return label
     }()
-    
     
     private lazy var myPageButton: CustomButton = {
         let button = CustomButton(style: .myPageButton)
@@ -34,25 +31,17 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private lazy var writeMessageButton = {
+    private lazy var writeMessageButton: CustomButton = {
         let button = CustomButton(style: .writeMessage)
         button.addTarget(self, action: #selector(writeMessageButtonTapped), for: .touchUpInside)
         return button
     }()
-}
-
-//MARK: - View Cycle
-extension MainViewController {
     
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        videoBackground = LoopingVideoPlayerUIView(frame: self.view.bounds)
-        self.view.addSubview(videoBackground)
-        self.view.sendSubviewToBack(videoBackground) // Send to back to make sure it's behind other views
-        soundEffect.playOceanSound()
-        setupUI()
-        
+        setupViews()
+        updateUserPoints()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,94 +49,78 @@ extension MainViewController {
         setupFloatingAnimation()
     }
     
-    
-}
-
-//MARK: - Setup UI
-extension MainViewController {
-    
-    
-    
-    func setupUI() {
-        
-        view.addSubview(myPageButton)
-        view.addSubview(bottleCount)
-        view.addSubview(mainBottleButton)
-        view.addSubview(writeMessageButton)
-        bottleCount.addSubview(bottleCountLabel)
+    // MARK: - Setup
+    private func setupViews() {
+        setupVideoBackground()
+        soundEffect.playOceanSound()
+        setupUIComponents()
         setupConstraints()
     }
-}
-
-//MARK: - Constraints
-extension MainViewController {
-    func setupConstraints() {
-        
-        myPageButton.snp.makeConstraints { make in
-            make.width.equalTo(80)
-            make.height.equalTo(80)
-            make.center.equalToSuperview()
-        }
-        
-        videoBackground.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        
-        bottleCount.snp.makeConstraints { make in
-            make.width.equalTo(100)
-            make.height.equalTo(44)
-            make.top.equalToSuperview().offset(80)
-            make.left.equalToSuperview().offset(30)
-        }
-        
-        bottleCountLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        mainBottleButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(100)
-        }
-        
-        writeMessageButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-50)
-            make.right.equalToSuperview().offset(-50)
-        }
-        
-    }
-}
-
-//MARK: - Button Action
-extension MainViewController {
     
-    @objc private func mainBottleButtonTapped() {
-        DispatchQueue.main.async {
-            self.videoBackground.toggleOpacity()
+    private func setupVideoBackground() {
+        videoBackground = LoopingVideoPlayerUIView(frame: self.view.bounds)
+        self.view.addSubview(videoBackground)
+        self.view.sendSubviewToBack(videoBackground)
+    }
+    
+    private func setupUIComponents() {
+        [myPageButton, bottleCount, mainBottleButton, writeMessageButton].forEach { view.addSubview($0) }
+        bottleCount.addSubview(bottleCountLabel)
+    }
+    
+    private func updateUserPoints() {
+        guard let accessToken = APIManager.getTokenFromKeychain() else {
+            print("Token not found in keychain.")
+            return
+        }
+        
+        APIManager.shared.fetchUserDetails(accessToken: accessToken) { [weak self] result in
+            switch result {
+            case .success(let userData):
+                DispatchQueue.main.async {
+                    self?.bottleCountLabel.text = "\(userData.point)"
+                }
+            case .failure(let error):
+                print("Failed to fetch user points:", error.localizedDescription)
+            }
         }
     }
     
-    @objc private func myPageButtonTapped() {
+    // MARK: - Constraints
+    private func setupConstraints() {
+        myPageButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(80)
+            $0.right.equalToSuperview().offset(-30)
+        }
+        
+        videoBackground.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        bottleCount.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(44)
+            $0.top.equalToSuperview().offset(80)
+            $0.left.equalToSuperview().offset(30)
+        }
+        
+        bottleCountLabel.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        mainBottleButton.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(100)
+        }
+        
+        writeMessageButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-50)
+            $0.right.equalToSuperview().offset(-50)
+        }
     }
     
-    @objc private func writeMessageButtonTapped() {
-        let writeMessageVC = WriteMessageViewController()
-        let navController = UINavigationController(rootViewController: writeMessageVC)
-
-        navController.modalTransitionStyle = .crossDissolve
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
-    }
-}
-
-
-
-//MARK: - Button Animation
-extension MainViewController {
-    
-    func setupFloatingAnimation() {
+    // MARK: - Animations
+    private func setupFloatingAnimation() {
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = 1.5
         animation.fromValue = mainBottleButton.layer.position.y
@@ -158,4 +131,27 @@ extension MainViewController {
         mainBottleButton.layer.add(animation, forKey: "floatingAnimation")
     }
     
+    // MARK: - Button Actions
+    @objc private func mainBottleButtonTapped() {
+        let popupVC = PopupViewController()
+        popupVC.transitioningDelegate = fadeTransitioningDelegate
+        popupVC.modalPresentationStyle = .custom
+        present(popupVC, animated: true)
+    }
+    
+    @objc private func myPageButtonTapped() {
+        let myPageVC = MyPageViewController()
+        let navController = UINavigationController(rootViewController: myPageVC)
+        navController.modalTransitionStyle = .crossDissolve
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
+    
+    @objc private func writeMessageButtonTapped() {
+        let writeMessageVC = WriteMessageViewController()
+        let navController = UINavigationController(rootViewController: writeMessageVC)
+        navController.modalTransitionStyle = .crossDissolve
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
 }

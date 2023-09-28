@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083C6A482AC575A200FCC78F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 083C6A472AC575A200FCC78F /* Alamofire */; };
 		0884217A2ABF93BA006DA592 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 088421792ABF93BA006DA592 /* RiveRuntime */; };
-		0884217D2ABF93C5006DA592 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217C2ABF93C5006DA592 /* SnapKit */; };
-		0884217F2ABF93C5006DA592 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */; };
 		088421832ABFA618006DA592 /* mainVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 088421822ABFA618006DA592 /* mainVideo.mp4 */; };
 		088421852ABFF8EA006DA592 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088421842ABFF8EA006DA592 /* ImageView.swift */; };
 		088421872AC001C7006DA592 /* GamjaFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088421862AC001C7006DA592 /* GamjaFlower-Regular.ttf */; };
@@ -36,6 +35,7 @@
 		08CA262F2ABF5C1B006C2443 /* login.riv in Resources */ = {isa = PBXBuildFile; fileRef = 08CA262E2ABF5C1B006C2443 /* login.riv */; };
 		08CA26332ABF5DAA006C2443 /* mainMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */; };
 		08CA26352ABF5DB5006C2443 /* loginMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */; };
+		C50D0CF7213E42BBDF72863F /* Pods_MuYaHo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3A4EB103D09D477FB3ACBC /* Pods_MuYaHo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +67,9 @@
 		08CA262E2ABF5C1B006C2443 /* login.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.riv; sourceTree = "<group>"; };
 		08CA26322ABF5DAA006C2443 /* mainMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic.mp3; sourceTree = "<group>"; };
 		08CA26342ABF5DB5006C2443 /* loginMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loginMusic.mp3; sourceTree = "<group>"; };
+		5ED1D12858956FBEF922B5A0 /* Pods-MuYaHo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuYaHo.release.xcconfig"; path = "Target Support Files/Pods-MuYaHo/Pods-MuYaHo.release.xcconfig"; sourceTree = "<group>"; };
+		6C6EFCE1620A095EDFB15C76 /* Pods-MuYaHo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuYaHo.debug.xcconfig"; path = "Target Support Files/Pods-MuYaHo/Pods-MuYaHo.debug.xcconfig"; sourceTree = "<group>"; };
+		7C3A4EB103D09D477FB3ACBC /* Pods_MuYaHo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuYaHo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083C6A482AC575A200FCC78F /* Alamofire in Frameworks */,
 				0884217A2ABF93BA006DA592 /* RiveRuntime in Frameworks */,
-				0884217D2ABF93C5006DA592 /* SnapKit in Frameworks */,
-				0884217F2ABF93C5006DA592 /* SnapKit-Dynamic in Frameworks */,
+				C50D0CF7213E42BBDF72863F /* Pods_MuYaHo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +91,8 @@
 			children = (
 				08CA25D32ABF597C006C2443 /* MuYaHo */,
 				08CA25D22ABF597C006C2443 /* Products */,
+				1DE83D2466ED1547729D6125 /* Pods */,
+				A0C8369033F07A877F7DF53A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +178,23 @@
 			path = AssetsFolder;
 			sourceTree = "<group>";
 		};
+		1DE83D2466ED1547729D6125 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C6EFCE1620A095EDFB15C76 /* Pods-MuYaHo.debug.xcconfig */,
+				5ED1D12858956FBEF922B5A0 /* Pods-MuYaHo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A0C8369033F07A877F7DF53A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A4EB103D09D477FB3ACBC /* Pods_MuYaHo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08CA25FB2ABF597F006C2443 /* Build configuration list for PBXNativeTarget "MuYaHo" */;
 			buildPhases = (
+				03EE7C5BBECF3C8C53595D0A /* [CP] Check Pods Manifest.lock */,
 				08CA25CD2ABF597C006C2443 /* Sources */,
 				08CA25CF2ABF597C006C2443 /* Resources */,
 				B2F84AB6F6D58E783056843A /* Frameworks */,
+				B9A61023E61D1421432342CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,8 +215,7 @@
 			name = MuYaHo;
 			packageProductDependencies = (
 				088421792ABF93BA006DA592 /* RiveRuntime */,
-				0884217C2ABF93C5006DA592 /* SnapKit */,
-				0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */,
+				083C6A472AC575A200FCC78F /* Alamofire */,
 			);
 			productName = MuYaHo;
 			productReference = 08CA25D12ABF597C006C2443 /* MuYaHo.app */;
@@ -224,7 +247,7 @@
 			mainGroup = 08CA25C82ABF597B006C2443;
 			packageReferences = (
 				088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */,
-				0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				083C6A462AC575A200FCC78F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 08CA25D22ABF597C006C2443 /* Products */;
 			projectDirPath = "";
@@ -250,6 +273,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03EE7C5BBECF3C8C53595D0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuYaHo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A61023E61D1421432342CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuYaHo/Pods-MuYaHo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuYaHo/Pods-MuYaHo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuYaHo/Pods-MuYaHo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08CA25CD2ABF597C006C2443 /* Sources */ = {
@@ -319,7 +384,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -382,7 +447,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -403,6 +468,7 @@
 		};
 		08CA25FC2ABF597F006C2443 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6EFCE1620A095EDFB15C76 /* Pods-MuYaHo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +500,7 @@
 		};
 		08CA25FD2ABF597F006C2443 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED1D12858956FBEF922B5A0 /* Pods-MuYaHo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -487,6 +554,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		083C6A462AC575A200FCC78F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 		088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios.git";
@@ -495,31 +570,18 @@
 				minimumVersion = 5.3.1;
 			};
 		};
-		0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		083C6A472AC575A200FCC78F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 083C6A462AC575A200FCC78F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		088421792ABF93BA006DA592 /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 088421782ABF93BA006DA592 /* XCRemoteSwiftPackageReference "rive-ios" */;
 			productName = RiveRuntime;
-		};
-		0884217C2ABF93C5006DA592 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		0884217E2ABF93C5006DA592 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0884217B2ABF93C5006DA592 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

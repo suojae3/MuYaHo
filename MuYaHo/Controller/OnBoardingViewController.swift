@@ -62,15 +62,15 @@ extension OnBoardingViewController {
     
     func constraints() {
         
-        backgroundImage.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        backgroundImage.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        enrolledButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-130)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(180)
-            make.height.equalTo(50)
+        enrolledButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-130)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(180)
+            $0.height.equalTo(50)
         }
     }
     

@@ -1,9 +1,22 @@
 import UIKit
 import SnapKit
 
+class ReadMessageViewController: UIViewController {
 
-//MARK: - Properties
-class ReadMessageViweController: UIViewController {
+    // MARK: - Properties
+    private lazy var dismissButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "x.circle"), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var letterView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "home"))
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
     
     private lazy var messageTextView: UITextView = {
         let textView = UITextView()
@@ -11,134 +24,91 @@ class ReadMessageViweController: UIViewController {
         textView.font = UIFont.systemFont(ofSize: 50)
         textView.autocorrectionType = .no
         textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        textView.isEditable = false
+        textView.delegate = self
         return textView
     }()
     
-    private lazy var letterView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    private lazy var subLetterView1: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home2")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    private lazy var subLetterView2: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home3")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    private lazy var subLetterView3: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "home4")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    private lazy var sendButton:UIButton = {
-        let button = UIButton()
-        button.layer.cornerRadius = 50
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-        button.layer.cornerRadius = 30
-        button.setTitle("Send", for: .normal)
-        button.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        return button
-    }()
-}
-
-
-
-//MARK: - View Cycle
-
-extension ReadMessageViweController {
-    
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavButton()
-        setupTextView()
+        loadRandomMessage()
     }
     
-    @objc func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func sendMessage() {
-        
-        
-        
-    }
-    
-    func setupTextView() {
-        
-        
-    }
-    
-    
-}
-
-
-
-extension ReadMessageViweController {
-    func setupNavButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.rightBarButtonItem
-    }
-}
-
-
-
-//MARK: - Setup UI
-
-private extension ReadMessageViweController {
-    func setupUI() {
-        
+    // MARK: - Setup
+    private func setupUI() {
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         view.backgroundColor = .white
-        view.addSubview(letterView)
-        view.addSubview(messageTextView)
-        view.addSubview(sendButton)
-        messageTextView.delegate = self
-        messageTextView.translatesAutoresizingMaskIntoConstraints = false
+        
+        [letterView, messageTextView, dismissButton].forEach { view.addSubview($0) }
+        
         setupConstraints()
-        
     }
     
-}
-
-//MARK: - Constraints
-private extension ReadMessageViweController {
-    func setupConstraints() {
-        letterView.snp.makeConstraints { make in
-            
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalToSuperview().multipliedBy(0.7)
+    private func setupConstraints() {
+        letterView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        
+        messageTextView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(50)
+            $0.left.right.equalToSuperview().inset(20)
         }
         
-        sendButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(letterView.snp.bottom).offset(100)
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(50)
+        dismissButton.snp.makeConstraints {
+            $0.top.equalTo(messageTextView.snp.bottom).offset(20)
+            $0.right.equalTo(messageTextView.snp.right).inset(20)
+            $0.size.equalTo(30)
         }
     }
     
+    // MARK: - Actions
+    @objc private func dismissViewController() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    private func loadRandomMessage() {
+        guard let accessToken = APIManager.getTokenFromKeychain() else {
+            print("Token not found in keychain.")
+            return
+        }
+        
+        APIManager.shared.fetchRandomLetter(accessToken: accessToken) { [weak self] result in
+            switch result {
+            case .success(let letterData):
+                DispatchQueue.main.async {
+                    self?.messageTextView.text = letterData.content
+                }
+            case .failure(let error):
+                print("loadMessageError")
+                self?.handleAPIError(error: error)
+            }
+        }
+    }
+    
+    // MARK: - Error Handling
+    private func handleAPIError(error: APIError) {
+        let errorMessage: String
+        switch error {
+        case .pointNotEnough:
+            errorMessage = "Point not enough"
+        case .letterNotLeft:
+            errorMessage = "Letter not left, you read all letter"
+        default:
+            errorMessage = error.localizedDescription
+        }
+        showAlert(message: errorMessage)
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
-
-
-//MARK: - UITextViewDelegate
-extension ReadMessageViweController: UITextViewDelegate {
+// MARK: - UITextViewDelegate
+extension ReadMessageViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
